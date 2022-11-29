@@ -1,21 +1,21 @@
 (function(){
-    const titleQuestions = [...document.querySelectorAll('.questions__title')];
-    console.log(titleQuestions)
+    const abrirDescripcion = [...document.querySelectorAll('.questions__title')];
+  
 
-    titleQuestions.forEach(question =>{
-        question.addEventListener('click', ()=>{
-            let height = 0;
-            let answer = question.nextElementSibling;
-            let addPadding = question.parentElement.parentElement;
+    abrirDescripcion.forEach(e =>{
+        e.addEventListener('click', ()=>{
+            let inicio = 0;
+            let answer = e.nextElementSibling;
+            let addPadding = e.parentElement.parentElement;
 
             addPadding.classList.toggle('questions__padding--add');
-            question.children[0].classList.toggle('questions__arrow--rotate');
+            e.children[0].classList.toggle('questions__arrow--rotate');
 
             if(answer.clientHeight === 0){
-                height = answer.scrollHeight;
+                inicio = answer.scrollHeight;
             }
 
-            answer.style.height = `${height}px`;
+            answer.style.height = `${inicio}px`;
         });
     });
 })();

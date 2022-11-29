@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/contactanos.css">
     <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.1/dist/leaflet.css"
+     integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+     crossorigin=""/>
 </head>
 <body>
     <header class="hero">
+        <br>
         <nav class="nav container">
             <div class="nav__logo">
-                <h2 class="nav__title">GO VEGAN</h2>
+                <h2 class="nav__title white">GO VEGAN</h2>
             </div>
 
             <ul class="nav__link nav__link--menu">
@@ -22,21 +26,64 @@
                     <a href="productos.html" class="nav__links">Productos</a>
                 </li>
                 <li class="nav__items">
-                    <a href="activismo.html" class="nav__links">Activismo</a>
+                    <a href="cotizar.html" class="nav__links">Cotizar productos</a>
                 </li>
                 <li class="nav__items">
                     <a href="contactanos.html" class="nav__links">Contáctanos</a>
                 </li>
             </ul>
         </nav>
-   
-
     </header>
+ 
+    <main>
+        <div class="contact_form">
+            <div class="formulario">      
+              <h1>Formulario de contacto</h1>
+                <h3>Escríbenos y en breve los pondremos en contacto contigo</h3>
+                  <form action="submeter-formulario.php" method="post">          
+                        <p>
+                          <label for="nombre" class="colocar_nombre">Nombre
+                            <span class="obligatorio">*</span>
+                          </label>
+                            <input type="text" name="introducir_nombre" id="nombre" required="obligatorio" placeholder="Escribe tu nombre">
+                        </p>
+                      
+                        <p>
+                          <label for="email" class="colocar_email">Email
+                            <span class="obligatorio">*</span>
+                          </label>
+                            <input type="email" name="introducir_email" id="email" required="obligatorio" placeholder="Escribe tu Email">
+                        </p>
+                    
+                        <p>
+                          <label for="telefone" class="colocar_telefono">Teléfono
+                          </label>
+                            <input type="tel" name="introducir_telefono" id="telefono" placeholder="Escribe tu teléfono">
+                        </p>        
+                      
+                        <p>
+                          <label for="mensaje" class="colocar_mensaje">Mensaje
+                            <span class="obligatorio">*</span>
+                          </label>                     
+                                            <textarea name="introducir_mensaje" class="texto_mensaje" id="mensaje" required="obligatorio" placeholder="Deja aquí tu comentario..."></textarea> 
+                                        </p>                    
+                        <button type="submit" name="enviar_formulario" id="enviar"><p>Enviar</p></button>
+                        <p class="aviso">
+                          <span class="obligatorio"> * </span>los campos son obligatorios.
+                        </p>          
+                  </form>
+            </div>  
+          </div>
 
-
+          <div class="mapa" id="map"></div>
+        
+    </main>
     <footer class="footer">
+       
         <section class="footer__container container">
+          
             <nav class="nav nav--footer">
+         
                 <h2 class="footer__title">GO VEGAN</h2>
             </nav>
         </section>
@@ -49,5 +96,10 @@
             </div>
         </section>
     </footer>
+
+    <script src="js/contactanos.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js"
+     integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s="
+     crossorigin=""></script>
 </body>
 </html>
